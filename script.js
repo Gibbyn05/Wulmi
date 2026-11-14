@@ -6,6 +6,7 @@
     const markLoaded = () => slot.classList.add('has-image');
     if (image.complete && image.naturalWidth) markLoaded();
     image.addEventListener('load', markLoaded);
+    image.addEventListener('error', () => { image.style.display = 'none'; });
   });
 
   const section = document.querySelector('.sheep-demo');
